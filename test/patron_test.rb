@@ -5,15 +5,36 @@ require './lib/patron'
 class PatronTest < MiniTest::Test
 
   def test_it_exists
-    patron = Patron.new
+    bob = Patron.new
     actual = Patron
-    expected = patron
+    expected = bob
     assert_instance_of actual, expected
   end
 
   def test_it_has_a_name
-    patron = Patron.new("Bob")
-    assert_equal "Bob", patron.name
+    bob = Patron.new("Bob")
+    assert_equal "Bob", bob.name
+  end
+
+  def test_it_can_take_interests
+    bob = Patron.new
+    actual = []
+    expected = bob.interests
+    assert_equal actual, expected
+  end
+
+  def test_can_add_interest
+    bob = Patron.new
+    actual = ["Dead Sea Scrolls"]
+    expected = bob.add_interest
+    assert_equal actual, expected
+  end
+
+  def test_it_can_send_interest
+    bob = Patron.new
+    actual = ["Dead Sea Scrolls", "Gems and Minerals"]
+    expected = bob.interests
+    assert_equal actual, expected
   end
 
 end
