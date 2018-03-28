@@ -7,17 +7,13 @@ attr_reader :name, :interests
     @interests = []
   end
 
-  # def interests
-  #   interests = []
-  # end
-
   def add_interest
      add_interest = [" Gems and Minerals"]
      add_interest = ["Dead Sea Scrolls"]
   end
 
-  def send_add_interest_into_interests
-    add_interest.send << @interests
+  def add_interest_into_interests(new_interest)
+    @interests << new_interest
   end
 
 end
